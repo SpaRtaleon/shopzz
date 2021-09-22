@@ -1,0 +1,6 @@
+<h1>{{loginForm.name}}</h1> <div>
+    <form  #loginForm ="ngForm" (submit)="loginval(loginForm)">
+    <input type="text" [(ngModel)]="name" name="name"  placeholder="name" ><br>
+    <input type="text"[(ngModel)] ="passwd" name="passwd"  placeholder="password"><br>
+    <button type="submit">Login</button>
+  </form>
