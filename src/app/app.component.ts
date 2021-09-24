@@ -43,7 +43,7 @@ headers=[
   
   
     image1="../assets/img/shop.jpg"
-    image2="../assets/img/pexels-negative-space-34577.jpg"
+    image2="../assets/img/wepik-2021822-17421.png"
     image3="../assets/img/pexels-terje-sollie-298863.jpg"
     images=[this.image1,this.image2,this.image3];
 

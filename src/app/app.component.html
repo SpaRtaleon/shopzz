@@ -20,7 +20,7 @@
  <button mat-icon-button class="cart-icon">
   <mat-icon >shopping_cart</mat-icon>
 </button>
-<button (click)='loginrout();'>
+<button routerLink='/login' >
   <mat-icon class="material-icons-outlined">
     account_circle
     </mat-icon>
@@ -38,7 +38,7 @@
       </div>
     </h3>
   </mat-drawer>
-  <ngb-carousel *ngIf="images" >
+  <ngb-carousel *ngIf="images" class="images" >
     <ng-template ngbSlide >
       <div class="picsum-img-wrapper">
         <img [src]="images[0]" alt="Random first slide">
@@ -47,7 +47,7 @@
         <h3>First slide label</h3>
       </div>
     </ng-template>
-    <ng-template ngbSlide>
+    <ng-template ngbSlide class="images">
       <div class="picsum-img-wrapper">
         <img [src]="images[1]" alt="Random second slide">
       </div>
@@ -55,22 +55,12 @@
         <h3>Second slide label</h3>
       </div>
     </ng-template>
-    <ng-template ngbSlide>
+    <ng-template ngbSlide class="images">
       <div class="picsum-img-wrapper">
         <img [src]="images[2]" alt="Random third slide">
       </div>
       <div class="carousel-caption">
         <h3>Third slide label</h3>
-      </div>
-    </ng-template>
-  </ngb-carousel>
-  <ngb-carousel>
-    <ng-template ngbSlide *ngFor="let image of images">
-      <div class="wrapper">
-        <img [src]="image" alt="Random first slide">
-      </div>
-      <div class="carousel-caption">
-      <!--   <h3>{{ image.title }}</h3> -->
       </div>
     </ng-template>
   </ngb-carousel>
@@ -87,9 +77,9 @@
     <button type="submit">Login</button>
   </form></div>
   {{name}}{{passwd}} -->
-  <app-mobile></app-mobile>
-  <app-login></app-login>
+
 </mat-drawer-container>
+
 <!-- <script>
   var slideIndex = 0;
 showSlides();

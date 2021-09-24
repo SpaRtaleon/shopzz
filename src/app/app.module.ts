@@ -17,17 +17,20 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { MobileComponent } from './mobile/mobile.component';
+import { AuthModule } from '@auth0/auth0-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MobileComponent,
+    MobileComponent
     
   ],
   
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -39,6 +42,10 @@ import { MobileComponent } from './mobile/mobile.component';
     NgbCarouselModule,
     NgbModule,
     FormsModule,
+    AuthModule.forRoot({
+      domain: 'YOUR_DOMAIN',
+      clientId: 'YOUR_CLIENT_ID'
+    }),
   ],
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
