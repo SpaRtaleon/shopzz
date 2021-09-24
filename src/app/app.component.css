@@ -35,14 +35,18 @@
     align-items: center;
     justify-content: center;
   }
-  
   .nav-sidenav {
     padding: 20px;
-    width: 20%;
+  }
+  .images{
+    overflow: hidden;
+    height: 500px;
   }
 .picsum-img-wrapper{
-  max-height: 500px;
+
   background-size: cover;
+  overflow: hidden;
+  width: 100%;
 }
 .loginform{
  text-align: center;
