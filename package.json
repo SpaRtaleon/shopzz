@@ -1,5 +1,5 @@
 {
-  "name": "sam",
+  "name": "shopzz",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,9 +18,9 @@
     "@angular/flex-layout": "^12.0.0-beta.35",
     "@angular/forms": "~12.2.0",
     "@angular/material": "^12.2.7",
-    "@angular/platform-browser": "~12.2.0",
-    "@angular/platform-browser-dynamic": "~12.2.0",
-    "@angular/router": "~12.2.0",
+    "@angular/platform-browser": "^12.2.7",
+    "@angular/platform-browser-dynamic": "^12.2.7",
+    "@angular/router": "^12.2.7",
     "@auth0/auth0-angular": "^1.7.0",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "bootstrap": "^5.1.1",
@@ -28,8 +28,8 @@
     "express": "^4.17.1",
     "material-design-icons": "^3.0.1",
     "rxjs": "~6.6.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "tslib": "^2.3.1",
+    "zone.js": "^0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.6",
