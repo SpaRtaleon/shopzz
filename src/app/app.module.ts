@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { MobileComponent } from './mobile/mobile.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { HomeComponent } from './home/home.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,7 @@ import { HomeComponent } from './home/home.component';
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
