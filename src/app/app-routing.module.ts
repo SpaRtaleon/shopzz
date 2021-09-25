@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MobileComponent } from './mobile/mobile.component';
-import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,6 +12,11 @@ const routes: Routes = [
   {
     path:'mobile',
     component:MobileComponent,
+
+  },
+  {
+    path:'com',
+    component:HomeComponent
 
   }
 ];

@@ -1,9 +1,5 @@
 
-import { Route } from '@angular/compiler/src/core';
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl, NgForm } from '@angular/forms';
-import { RouterEvent, ROUTES } from '@angular/router';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 
 
@@ -14,6 +10,9 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent implements OnInit {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   // loginval(formValue : NgForm){
   //   console.log(formValue);
   // }
