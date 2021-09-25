@@ -19,17 +19,26 @@ import { LoginComponent } from './login/login.component';
 import { MobileComponent } from './mobile/mobile.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { HomeComponent } from './home/home.component';
+<<<<<<< HEAD
 import { fakeBackendProvider } from './_helpers';
 import { AlertComponent } from './_components';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+=======
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+>>>>>>> main
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MobileComponent,
+<<<<<<< HEAD
     HomeComponent,
     AlertComponent,
+=======
+    HomeComponent
+>>>>>>> main
     
   ],
   
@@ -56,10 +65,14 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
   ],
+<<<<<<< HEAD
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     fakeBackendProvider
   ],
+=======
+  providers: [AuthGuard],
+>>>>>>> main
   bootstrap: [AppComponent]
 })
 export class AppModule { }

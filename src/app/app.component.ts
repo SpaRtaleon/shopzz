@@ -20,9 +20,10 @@ export class AppComponent implements OnInit {
   //   console.log(formValue);
   // }
   
-  constructor(private router: Router) {
+  constructor() {
 
   }
+<<<<<<< HEAD
   
     // name:string='';
     // passwd:any=''
@@ -31,10 +32,17 @@ export class AppComponent implements OnInit {
 
     }
     
+=======
+  ngOnInit(): void {
+>>>>>>> main
   
+  }
   
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> main
     }
 
  
