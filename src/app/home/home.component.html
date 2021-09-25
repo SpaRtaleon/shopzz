@@ -1,0 +1,94 @@
+<mat-drawer-container class="nav-container" autosize>
+    <mat-toolbar>
+      <button   mat-icon-button (click)="drawer.toggle()" class="menu-icon">
+       <mat-icon>menu</mat-icon>
+     </button>
+    <span>{{title}}</span>
+     <span class="spacer"></span>
+     <button mat-icon-button class="mat-icon-favorite" aria-label="icon-button with heart icon">
+       <mat-icon >favorite</mat-icon>
+     </button>
+     <button mat-icon-button class="cart-icon">
+      <mat-icon >shopping_cart</mat-icon>
+    </button>
+    <button routerLink='/login' >
+      <mat-icon class="material-icons-outlined">
+        account_circle
+        </mat-icon>
+    </button>
+    </mat-toolbar>
+    
+    
+      <mat-drawer #drawer class="nav-sidenav" mode="side">
+        <h2>Menu</h2>
+        <h3>
+            <div *ngFor="let header of headers">
+              <button mat-flat-button>
+                {{header.firstname}}
+              </button>       
+          </div>
+        </h3>
+      </mat-drawer>
+      <ngb-carousel *ngIf="images" class="images" >
+        <ng-template ngbSlide >
+          <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Random first slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>First slide label</h3>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide class="images">
+          <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Random second slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Second slide label</h3>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide class="images">
+          <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Random third slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Third slide label</h3>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      <!-- <div class="loginform">
+        <form  #loginForm ="ngForm" (submit)="loginval(loginForm)">
+         
+       
+          <div class="inputs">
+            <label for="name">Name</label><br>
+        <input type="text" [(ngModel)]="name" name="name"  placeholder="name" ><br>
+        <label for="password">password</label><br>
+        <input type="password"[(ngModel)] ="passwd" name="passwd"  placeholder="password"><br>
+      </div>
+        <button type="submit">Login</button>
+      </form></div>
+      {{name}}{{passwd}} -->
+    
+    </mat-drawer-container>
+    
+    <!-- <script>
+      var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script> -->

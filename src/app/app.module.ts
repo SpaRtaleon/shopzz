@@ -18,12 +18,14 @@ import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { MobileComponent } from './mobile/mobile.component';
 import { AuthModule } from '@auth0/auth0-angular';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MobileComponent
+    MobileComponent,
+    HomeComponent
     
   ],
   
