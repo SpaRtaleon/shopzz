@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterEvent, ROUTES } from '@angular/router';
-import { AccountService } from '';
 
 @Component({ templateUrl: 'home.component.html' })
 @Component({

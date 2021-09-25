@@ -4,8 +4,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, NgForm } from '@angular/forms';
 import { RouterEvent, ROUTES } from '@angular/router';
 import { Router } from '@angular/router';
-import { AccountService } from './_services/account.service';
-import { User } from './_models';
 
 
 
@@ -23,26 +21,10 @@ export class AppComponent implements OnInit {
   constructor() {
 
   }
-<<<<<<< HEAD
-  
-    // name:string='';
-    // passwd:any=''
-    ngOnInit(){
-
-
-    }
-    
-=======
   ngOnInit(): void {
->>>>>>> main
   
   }
   
-<<<<<<< HEAD
-
-
-=======
->>>>>>> main
     }
 
  
