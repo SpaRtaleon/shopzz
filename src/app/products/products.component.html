@@ -1,0 +1,19 @@
+<mat-card>
+<mat-card-title>Products</mat-card-title>
+<mat-card-subtitle>Add Product</mat-card-subtitle>
+<form #addproduct='ngForm'(submit)="addpro(addproduct.value)" >
+<mat-form-field hintLabel="Max 20 characters" appearance="outline">
+    <mat-label>Product Name</mat-label>
+    <input matInput (ngModel)="productName" name="productName" maxlength="10" placeholder="Name">
+   
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Select Type</mat-label>
+    <mat-select (ngModel)="[type]" name="type">
+      <mat-option  name="type" value="grocery">Grocery</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit">Add</button>
+</form>
+</mat-card>

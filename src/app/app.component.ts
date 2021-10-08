@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -9,20 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
+export class AppComponent  {
+    
   // loginval(formValue : NgForm){
   //   console.log(formValue);
   // }
   
-  constructor() {
 
-  }
-  ngOnInit(): void {
-  
-  }
   
     }
 

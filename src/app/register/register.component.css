@@ -1,0 +1,16 @@
+/* .mat-card-content{
+    
+}
+.register-wrapper{
+    align-content: center;
+    justify-content:center ;
+    padding: 30px;
+
+} */
+.mat-card {
+    height: 100%;
+    text-align: center;} 
+.form-fields{
+    
+    padding: 20px;
+}

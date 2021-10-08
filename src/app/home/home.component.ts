@@ -1,16 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterEvent, ROUTES } from '@angular/router';
+import { Router, RouterEvent, ROUTES } from '@angular/router';
+import { User } from '../models/user';
+import { AuthenticationService } from '../auth/authentication.service';
 
-@Component({ templateUrl: 'home.component.html' })
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  [x: string]: any;
   title = 'App Name';
-
+  currentUser!: User;
   showFiller = false;
+
+  constructor( 
+    private router :Router,
+    authenticationService : AuthenticationService) {
+      authenticationService.currentUser.subscribe((x:any) => this.currentUser =x);
+     }
+
+     logout(){
+      this.authenticationService.logout();
+       this.router.navigate(['/login'])
+     }
 headers=[
     {
       'firstname':'Mobile'
@@ -18,12 +31,8 @@ headers=[
   {
       'firstname':'Fashion'
     }];
-    // name:string='';
-    // passwd:any=''
-    ngOnInit(){
 
 
-    }
     
   
   
@@ -32,5 +41,5 @@ headers=[
     image3="../assets/img/pexels-terje-sollie-298863.jpg"
     images=[this.image1,this.image2,this.image3];
 
-  constructor() { }
+  
 }
