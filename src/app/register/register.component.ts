@@ -39,10 +39,11 @@ export class RegisterComponent implements OnInit {
     // if (this.registerForm.invalid){
     //   return;
     // }
-    this.authenticationService.register(this.f.Username.value,this.f.Password.value,this.f.Email.value,this.f.userType.value)
+    if (this.f.valid)
+    {this.authenticationService.register(this.f.Username.value,this.f.Password.value,this.f.Email.value,this.f.userType.value)
      .pipe(first())
     .subscribe(
-      (Response) =>{ console.log('response',Response)
+      (Response) =>{ 
         this.router.navigateByUrl('/home')
         //  this.router.navigate([ this.returnUrl]);
       
@@ -51,9 +52,11 @@ export class RegisterComponent implements OnInit {
         console.log(error)
         this.error=error;
       });
-      console.log();
-      console.log("I WORKS!");
+      console.log("IT WORKS!");
       return (this.error);
+      }
+      console.log("Form is invalid")
+      return this.error
     }
 
   }

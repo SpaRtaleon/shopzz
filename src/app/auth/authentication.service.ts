@@ -4,6 +4,7 @@ import { User } from '../models/user';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map} from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -44,17 +45,15 @@ export class AuthenticationService {
    }
 
    register(Username:string,Password:any,Email:string,Role:any):Observable<any>{
-    return this.http.post<any>(`${environment.api}/users/register`, { Username, Password, Email, Role,httpOptions });
-
-      //  .pipe(map(user =>{
-      //     // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
-      //    user.authdata = window.btoa(username +':' + password);
-      //    localStorage.setItem('currentUser',JSON.stringify(user));
-      //    this.currentUserSubject.next(user);
-         
-      //    return user;
-      //    console.log(user,)
-      //  }));
+    return this.http.post<any>(`${environment.api}/users/register`, { Username, Password, Email, Role,httpOptions })
+       .pipe(map(user =>{
+          // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
+         user.authdata = window.btoa(Username +':' + Password);
+         localStorage.setItem('currentUser',JSON.stringify(user));
+         this.currentUserSubject.next(user);
+         return user;
+         console.log(user,)
+       }));
   }
 
 
