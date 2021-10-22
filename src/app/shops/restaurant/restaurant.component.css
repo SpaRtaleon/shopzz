@@ -1,0 +1,51 @@
+.container{
+    padding-top: 20px;
+}
+.restaurant_list{
+    display: flex;
+    flex: row wrap;
+    padding:16px;
+    justify-content: center;
+    
+}
+mat-card {
+    max-width: 300px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .spacebar{
+    width: 20px;
+  }
+  .search{
+    justify-content: end;
+    display: flex;
+  }
+  @media only screen and (max-width: 600px) {
+    .restaurant_list{
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+
+      
+    }
+    mat-card{
+      height: 100px;
+      width: 300px;
+      
+    }
+    .flex{
+      flex: auto;
+    }
+    img{
+      height: 90px;
+      width: 90px;
+      background-size: cover;
+    }
+    h1{
+      font-size: 20px;
+    }
+  }

@@ -15,7 +15,9 @@
   color: #ff8f00;
   
   }
-  
+  .carousel-inner .sr-only {
+    display: none;
+ }
   .mat-toolbar{
     border: none;
     background-color: #ddd4d4;
@@ -57,4 +59,14 @@
 }
 .lables{
   text-align: center;
+}
+.mat-tab{
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .images{
+    height: 200px;
+  }
 }

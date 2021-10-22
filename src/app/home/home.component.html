@@ -1,41 +1,8 @@
-<mat-drawer-container class="nav-container" autosize>
-    <mat-toolbar>
-      <button   mat-icon-button (click)="drawer.toggle()" class="menu-icon">
-       <mat-icon>menu</mat-icon>
-     </button>
-    <span>{{title}}</span>
-     <span class="spacer"></span>
-     <button mat-icon-button class="mat-icon-favorite" aria-label="icon-button with heart icon">
-       <mat-icon >favorite</mat-icon>
-     </button>
-     <button mat-icon-button class="cart-icon">
-      <mat-icon >shopping_cart</mat-icon>
-    </button>
-    <button  >
-  
-   <a routerLink='/login'>
-      <mat-icon class="material-icons-outlined">
-        account_circle
-        </mat-icon>
-      </a>
-    </button>
-    </mat-toolbar>
-    
-    
-      <mat-drawer #drawer class="nav-sidenav" mode="side">
-        <h2>Menu</h2>
-        <h3>
-            <div *ngFor="let header of headers">
-              <button mat-flat-button>
-                {{header.firstname}}
-              </button>       
-          </div>
-        </h3>
-      </mat-drawer>
-      <ngb-carousel *ngIf="images" class="images" >
+
+      <ngb-carousel *ngIf="images"  class="images sr-only"  >
         <ng-template ngbSlide >
-          <div class="picsum-img-wrapper">
-            <img [src]="images[0]" alt="Random first slide">
+          <div class="picsum-img-wrapper" >
+            <img [src]="images[0]" alt="Random first slide" >
           </div>
           <div class="carousel-caption">
             <h3>First slide label</h3>
@@ -58,6 +25,8 @@
           </div>
         </ng-template>
       </ngb-carousel>
+      <app-restaurant></app-restaurant>
+
       <!-- <div class="loginform">
         <form  #loginForm ="ngForm" (submit)="loginval(loginForm)">
          
@@ -71,8 +40,8 @@
         <button type="submit">Login</button>
       </form></div>
       {{name}}{{passwd}} -->
+
     
-    </mat-drawer-container>
     
     <!-- <script>
       var slideIndex = 0;
@@ -95,3 +64,4 @@
       setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
     </script> -->
+ 

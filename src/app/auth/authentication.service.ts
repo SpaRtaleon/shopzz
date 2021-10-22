@@ -4,7 +4,6 @@ import { User } from '../models/user';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map} from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,22 +29,14 @@ export class AuthenticationService {
      return this.currentUserSubject.value;
    }
 
-   login(username:string,password:any){
-     return this.http.post<any>(`${environment.api}/users`,{username,password})
+   login(username:string,password:any|JSON){
+     
+     return this.http.post<any>(`${environment.api}/api/auth/signin`,{username,password})
     
-        .pipe(map(user =>{
-           // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
-          user.authdata = window.btoa(username +':' + password);
-          localStorage.setItem('currentUser',JSON.stringify(user));
-          this.currentUserSubject.next(user);
-          console.log(user)
-          return user;
-          console.log(user,)
-        }));
-   }
+   };
 
    register(Username:string,Password:any,Email:string,Role:any):Observable<any>{
-    return this.http.post<any>(`${environment.api}/users/register`, { Username, Password, Email, Role,httpOptions })
+    return this.http.post<any>(`${environment.api}/api/auth/signup`, { Username, Password, Email, Role,httpOptions })
        .pipe(map(user =>{
           // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
          user.authdata = window.btoa(Username +':' + Password);
@@ -62,4 +53,17 @@ export class AuthenticationService {
       //  this.currentUserSubject.next(null);
 
    }
+
+   signOut(): void {
+    window.sessionStorage.clear();
+  }
+
+  public saveToken(token: string): void {
+    window.sessionStorage.removeItem('userToken');
+    window.sessionStorage.setItem('userToken', token);
+  }
+
+  public getToken(): string | null {
+    return window.sessionStorage.getItem('userToken');
+  }
 }

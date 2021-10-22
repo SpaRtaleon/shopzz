@@ -1,6 +1,39 @@
-<h1>{{loginForm.name}}</h1> <div>
-    <form  #loginForm ="ngForm" (submit)="loginval(loginForm)">
-    <input type="text" [(ngModel)]="name" name="name"  placeholder="name" ><br>
-    <input type="text"[(ngModel)] ="passwd" name="passwd"  placeholder="password"><br>
-    <button type="submit">Login</button>
-  </form>
+
+      <mat-drawer #drawer class="nav-sidenav" mode="side">
+        <h2>Menu</h2>
+        <h3>
+            <div *ngFor="let header of headers">
+              <button mat-flat-button>
+                {{header.firstname}}
+              </button>       
+          </div>
+        </h3>
+      </mat-drawer>
+      <mat-drawer-container class="nav-container" autosize>
+  <mat-toolbar>
+    <button   mat-icon-button (click)="drawer.toggle()" class="menu-icon">
+     <mat-icon>menu</mat-icon>
+   </button>
+  <span>{{title}}</span>
+   <span class="spacer"></span>
+   <button mat-icon-button class="mat-icon-favorite" aria-label="icon-button with heart icon">
+     <mat-icon >favorite</mat-icon>
+   </button>
+   <button mat-icon-button class="cart-icon">
+    <mat-icon >shopping_cart</mat-icon>
+  </button>
+  <button  >
+
+ <a routerLink='/login'>
+    <mat-icon class="material-icons-outlined">
+      account_circle
+      </mat-icon>
+    </a>
+  </button>
+  </mat-toolbar>
+  <mat-tab-group>
+    <mat-tab label="Restaurant" routerLink='/Restaurant'> </mat-tab>
+    <mat-tab label="Grocery" routerLink='/login'> </mat-tab>
+    <mat-tab label="Fashion"> Content 3 </mat-tab>
+  </mat-tab-group>
+</mat-drawer-container>

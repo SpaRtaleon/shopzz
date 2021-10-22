@@ -20,17 +20,7 @@ export class HomeComponent {
       authenticationService.currentUser.subscribe((x:any) => this.currentUser =x);
      }
 
-     logout(){
-      this.authenticationService.logout();
-       this.router.navigate(['/login'])
-     }
-headers=[
-    {
-      'firstname':'Mobile'
-    },
-  {
-      'firstname':'Fashion'
-    }];
+    
 
 
     

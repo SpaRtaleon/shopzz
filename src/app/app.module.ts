@@ -19,23 +19,30 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
-import { MobileComponent } from './mobile/mobile.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
+import { MobileComponent } from './shops/mobile/mobile.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatListModule } from '@angular/material/list';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { RestaurantComponent } from './shops/restaurant/restaurant.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MobileComponent,
     HomeComponent,
     ProductsComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavComponent,
+    RestaurantComponent,
+    MobileComponent
     
   ],
   
@@ -56,11 +63,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatTabsModule,
+    MatListModule,
 
     NgbCarouselModule,
     NgbModule,
     FormsModule,
     FlexLayoutModule ,
+    LayoutModule,
+    NgImageSliderModule,
+   
  
   ],
   schemas:[
