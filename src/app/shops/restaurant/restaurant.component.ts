@@ -34,6 +34,10 @@ export class RestaurantComponent implements OnInit {
   {
     'RestaurantName':'Hotel SilverSpoon',
     'Address':' Thilagar Nagar, Sekkalai, Karaikudi'
+  },
+  {
+    'RestaurantName':'Hotel SilverSpoon',
+    'Address':' Thilagar Nagar, Sekkalai, Karaikudi'
   }
 ]
 }

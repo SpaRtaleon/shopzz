@@ -20,6 +20,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
@@ -65,6 +66,7 @@ import { RestaurantComponent } from './shops/restaurant/restaurant.component';
     MatSelectModule,
     MatTabsModule,
     MatListModule,
+    MatSnackBarModule,
 
     NgbCarouselModule,
     NgbModule,

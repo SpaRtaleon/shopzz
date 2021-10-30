@@ -64,6 +64,9 @@
   display: flex;
   justify-content: center;
 }
+carousel-item sr-only{
+  display: none;
+}
 
 @media only screen and (max-width: 600px) {
   .images{

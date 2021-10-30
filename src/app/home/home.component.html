@@ -1,5 +1,5 @@
 
-      <ngb-carousel *ngIf="images"  class="images sr-only"  >
+      <ngb-carousel *ngIf="images"  class="images " [showNavigationIndicators]="false"  >
         <ng-template ngbSlide >
           <div class="picsum-img-wrapper" >
             <img [src]="images[0]" alt="Random first slide" >
@@ -25,7 +25,14 @@
           </div>
         </ng-template>
       </ngb-carousel>
-      <app-restaurant></app-restaurant>
+      <mat-tab-group dynamicHeight mat-align-tabs="center">
+       <mat-tab label="Restaurant" value="1">
+        <app-restaurant></app-restaurant> </mat-tab>
+        <mat-tab label="Grocery"> <h1>Grocery</h1></mat-tab>
+        <mat-tab label="Fashion"><h1>Fashion</h1></mat-tab>
+        
+      </mat-tab-group>
+    
 
       <!-- <div class="loginform">
         <form  #loginForm ="ngForm" (submit)="loginval(loginForm)">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar} from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
@@ -12,21 +13,23 @@ import { AuthenticationService } from '../auth/authentication.service';
 })
 export class RegisterComponent implements OnInit {
   registerForm!:FormGroup;
-  userType: any = [ 'Customer','Shopzz Admin', 'Super Admin'];
+  roles='user';
   error: any;
 
   constructor(private formBuilder : FormBuilder,
     private route :ActivatedRoute,
     private router : Router,
-    private authenticationService : AuthenticationService) { }
+    private authenticationService : AuthenticationService,
+    private snackBar: MatSnackBar) { }
     
     
   ngOnInit(){
     this.registerForm = this.formBuilder.group({
-      Username:['',Validators.required],
-      Email:['',Validators.required],
-      Password:['',Validators.required],
-      userType:['',Validators.required]
+      firstName:['',Validators.required],
+      lastName:['',Validators.required],
+      mobileNo:['',Validators.required],
+      email:['',Validators.required],
+      password:['',Validators.required]
     })
     
   }
@@ -39,14 +42,17 @@ export class RegisterComponent implements OnInit {
     // if (this.registerForm.invalid){
     //   return;
     // }
-    if (this.f.valid)
-    {this.authenticationService.register(this.f.Username.value,this.f.Password.value,this.f.Email.value,this.f.userType.value)
+    
+      this.authenticationService.register(this.f.firstName.value,this.f.lastName.value, this.f.mobileNo.value,this.f.password.value,this.f.email.value,this.roles)
      .pipe(first())
     .subscribe(
       (Response) =>{ 
         this.router.navigateByUrl('/home')
         //  this.router.navigate([ this.returnUrl]);
-      
+      this.snackBar.open(Response.msg.toString(),'',{
+        duration:3000,
+        horizontalPosition:'right'
+      })
       },
       (error) =>{
         console.log(error)
@@ -55,10 +61,8 @@ export class RegisterComponent implements OnInit {
       console.log("IT WORKS!");
       return (this.error);
       }
-      console.log("Form is invalid")
-      return this.error
-    }
-
+      
+     
   }
   // registerUser(){
   //   console.log(this.registerForm.value)

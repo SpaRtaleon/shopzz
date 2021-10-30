@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent, ROUTES } from '@angular/router';
 import { User } from '../models/user';
 import { AuthenticationService } from '../auth/authentication.service';
-
+import {
+  ViewEncapsulation
+} from '@angular/core'
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

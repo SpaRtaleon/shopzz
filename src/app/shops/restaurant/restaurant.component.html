@@ -8,18 +8,21 @@
       </mat-form-field>
     </div>
     <div class="restaurant_list"  fxLayoutGap="16px grid" >
-      <div class="flex" fxFlex='20%' *ngFor='let restaurant of restaurants'>
-    <mat-card class="example-card">
+      <div class="flex"  *ngFor='let restaurant of restaurants'>
+    <mat-card class="shoplist-card">
          
 
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-         <mat-card-title>{{restaurant.RestaurantName}}</mat-card-title>
+          <div class="group">
+              <mat-card-title>{{restaurant.RestaurantName}}</mat-card-title>
           <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
           <mat-card-content>
           <p>
             {{restaurant.Address}}
           </p>
         </mat-card-content>
+          </div>
+       
       </mat-card>
     </div>
     </div>

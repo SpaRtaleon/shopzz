@@ -1,3 +1,4 @@
+
 <form >
 <div class="register-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
@@ -6,40 +7,52 @@
       </mat-card-header>
   
       <form class="register-form" [formGroup]='registerForm' (submit)='registerUser()'>
-  
+                  
         <mat-card-content>
+      
           <mat-form-field class="form-fields">
             <input matInput
-            formControlName='Username' 
-            placeholder="Username">
+            formControlName='firstName' 
+            placeholder="First Name">
+          </mat-form-field>
+  
+          <mat-form-field class="form-fields">
+            <input matInput
+            formControlName='lastName' 
+            placeholder="Last Name">
+          </mat-form-field>
+
+          <mat-form-field class="form-fields">
+            <input matInput
+            formControlName='mobileNo' 
+            placeholder="Mobile Number">
           </mat-form-field>
   
           <mat-form-field class="form-fields">
             <input matInput type="email"
-            formControlName='Email' 
+            formControlName='email' 
             placeholder="Email">
           </mat-form-field>
   
           <mat-form-field class="form-fields">
             <input matInput type="password" 
-            formControlName="Password"
+            formControlName="password"
             placeholder="Password">
           </mat-form-field>
   
-          <mat-form-field class="form-fields">
+          <!-- <mat-form-field class="form-fields">
             <mat-label>Choose a type...</mat-label>
             <mat-select formControlName="userType">
               <mat-option [value]="roles" *ngFor="let roles of userType">{{roles}}
               </mat-option>
             </mat-select>
-          </mat-form-field>
+          </mat-form-field> -->
   
         </mat-card-content>
-        <button type="submit" mat-stroked-button color="accent" class="btn-block">Register</button>
+        <button type="submit" mat-stroked-button color="accent" class="btn-block"  >Register</button>
        
   
       </form>
     </mat-card>
   </div>
 </form>
-<app-restaurant></app-restaurant>

@@ -35,15 +35,16 @@ export class AuthenticationService {
     
    };
 
-   register(Username:string,Password:any,Email:string,Role:any):Observable<any>{
-    return this.http.post<any>(`${environment.api}/api/auth/signup`, { Username, Password, Email, Role,httpOptions })
+   register(firstName:string,lastName:string,mobileNo:string,password:any,email:string,roles:any):Observable<any>{
+    return this.http.post<any>(`${environment.api}/api/auth/signup`, { firstName,lastName,mobileNo, password, email, roles,httpOptions })
        .pipe(map(user =>{
           // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
-         user.authdata = window.btoa(Username +':' + Password);
+         user.authdata = window.btoa(mobileNo +':' + password);
          localStorage.setItem('currentUser',JSON.stringify(user));
          this.currentUserSubject.next(user);
+         console.log('user',user)
          return user;
-         console.log(user,)
+         
        }));
   }
 

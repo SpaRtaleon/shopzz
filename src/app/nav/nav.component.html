@@ -1,8 +1,49 @@
+<!-- <mat-drawer #drawer class="nav-sidenav" mode="side">
+  <h2>Menu</h2>
+  <h3>
+      <div >
+        <button mat-flat-button>
+         mobiles
+        </button>       
+    </div>
+  </h3>
+</mat-drawer>
+<mat-drawer-container class="nav-container" autosize>
+<mat-toolbar>
+<button   mat-icon-button (click)="drawer.toggle()" class="menu-icon">
+<mat-icon>menu</mat-icon>
+</button>
+<span>Shopzz</span>
+<span class="spacer"></span>
+<button mat-icon-button class="mat-icon-favorite" aria-label="icon-button with heart icon">
+<mat-icon >favorite</mat-icon>
+</button>
+<button mat-icon-button class="cart-icon">
+<mat-icon >shopping_cart</mat-icon>
+</button>
+<button  >
+
+<a routerLink='/login'>
+<mat-icon class="material-icons-outlined">
+account_circle
+</mat-icon>
+</a>
+</button>
+</mat-toolbar>
+<mat-tab-group>
+<mat-tab label="Restaurant" routerLink='/Restaurant'> </mat-tab>
+<mat-tab label="Grocery" routerLink='/login'> </mat-tab>
+<mat-tab label="Fashion"> Content 3 </mat-tab>
+</mat-tab-group>
+</mat-drawer-container> -->
+
+
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport 
+     
+      mode='side'>
+     
+      
     <mat-toolbar>Menu
       
     </mat-toolbar>
@@ -13,13 +54,13 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="primary">
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       
       </button>
@@ -29,7 +70,7 @@
         <mat-icon >shopping_cart</mat-icon>
       </button>
     </mat-toolbar>
-    <!-- Add Content Here --> 
+    <!-- Add Content Here -->
     
  <router-outlet></router-outlet>
   </mat-sidenav-content>
