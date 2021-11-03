@@ -9,7 +9,10 @@ import { RestaurantComponent } from "./shops/restaurant/restaurant.component";
 import { NavComponent } from './nav/nav.component';
 
 const routes: Routes = [
-  
+  {
+    path: '',
+    component:HomeComponent
+  },
   {
     path: 'login',
     component:LoginComponent

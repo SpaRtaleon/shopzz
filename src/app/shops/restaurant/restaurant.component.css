@@ -28,7 +28,7 @@ mat-card {
     width: 20px;
   }
   .search{
-    justify-content: end;
+    justify-content: flex-end;
     display: flex;
   }
   @media only screen and (max-width: 768px) {
@@ -39,7 +39,9 @@ mat-card {
   
     mat-card{
       height: 100px;
-      width: 260px;
+      width: 290px;
+     max-width: 290px;
+
     }
 
     mat-card-title, mat-card p {
@@ -49,8 +51,9 @@ mat-card {
 
   
     img{
-      height: 100px;
+      height: 90px;
       width: 90px;
+      padding: 5px;
       background-size: cover;
       position: absolute;
       border-radius: 5px;

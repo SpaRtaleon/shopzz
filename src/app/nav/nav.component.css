@@ -30,7 +30,11 @@
 .spacer {
   flex: 1 1 auto;
 }
-@media only screen and (min-width: 768px) {
-
+@media only screen and (max-width: 700px) {
+  .sidenav {
+    width: 40%;
+    color: #ffffff;
+    background: #adb5bd;
+   }
 
 }
