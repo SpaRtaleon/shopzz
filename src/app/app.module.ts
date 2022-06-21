@@ -38,6 +38,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RestaurantProdComponent } from './products/restaurant-prod/restaurant-prod.component';
 import { CartComponent } from './cart/cart.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +77,7 @@ import { CartComponent } from './cart/cart.component';
 
     NgbCarouselModule,
     NgbModule,
+    ToastrModule.forRoot(),
     FormsModule,
     FlexLayoutModule ,
     LayoutModule,

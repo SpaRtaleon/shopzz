@@ -4,6 +4,7 @@ import { Product } from '../product.entity';
 import { ProductService } from '../../services/product.service';
 import { Item } from '../item.entity';
 import { CartComponent } from 'src/app/cart/cart.component';
+import { Toast, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-restaurant-prod',
@@ -12,7 +13,7 @@ import { CartComponent } from 'src/app/cart/cart.component';
 })
 export class RestaurantProdComponent implements OnInit {
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,private toast:ToastrService) { }
   
   products!: Product[];
 
@@ -48,8 +49,11 @@ export class RestaurantProdComponent implements OnInit {
         item.quantity += 1;
         cart[index] = JSON.stringify(item);
         localStorage.setItem("cart", JSON.stringify(cart));
+      
       }
     }
+    alert('sss')
+    this.toast.success('Cart Added Successfuy!');
 
   } 
   

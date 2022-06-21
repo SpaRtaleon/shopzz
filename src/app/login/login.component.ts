@@ -1,5 +1,5 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { FormGroup, FormControl, NgForm, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, FormControl, NgForm, UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../auth/authentication.service';
@@ -10,7 +10,7 @@ import { AuthenticationService } from '../auth/authentication.service';
 })
 
 export class LoginComponent implements OnInit {
-  loginForm!:FormGroup;
+  loginForm!:UntypedFormGroup;
   returnUrl!:string;
   submitted=false;
   loading=false;
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   password='';
 
   constructor( 
-    private formBuilder : FormBuilder,
+    private formBuilder : UntypedFormBuilder,
     private route :ActivatedRoute,
     private router : Router,
     private authenticationService : AuthenticationService) {

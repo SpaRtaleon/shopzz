@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar} from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -12,11 +12,11 @@ import { AuthenticationService } from '../auth/authentication.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm!:FormGroup;
+  registerForm!:UntypedFormGroup;
   roles='user';
   error: any;
 
-  constructor(private formBuilder : FormBuilder,
+  constructor(private formBuilder : UntypedFormBuilder,
     private route :ActivatedRoute,
     private router : Router,
     private authenticationService : AuthenticationService,
