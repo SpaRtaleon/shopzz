@@ -34,6 +34,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { RestaurantComponent } from './shops/restaurant/restaurant.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { RestaurantProdComponent } from './products/restaurant-prod/restaurant-prod.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,9 @@ import { RestaurantComponent } from './shops/restaurant/restaurant.component';
     RegisterComponent,
     NavComponent,
     RestaurantComponent,
-    MobileComponent
+    MobileComponent,
+    RestaurantProdComponent,
+    CartComponent
     
   ],
   
@@ -74,6 +80,12 @@ import { RestaurantComponent } from './shops/restaurant/restaurant.component';
     FlexLayoutModule ,
     LayoutModule,
     NgImageSliderModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
    
  
   ],

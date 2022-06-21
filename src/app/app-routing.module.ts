@@ -7,6 +7,8 @@ import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
 import { RestaurantComponent } from "./shops/restaurant/restaurant.component";
 import { NavComponent } from './nav/nav.component';
+import { RestaurantProdComponent } from './products/restaurant-prod/restaurant-prod.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -28,7 +30,7 @@ const routes: Routes = [
 
   },
   {
-    path:'products',
+    path:'add-products',
     component:ProductsComponent
 
   },
@@ -39,6 +41,15 @@ const routes: Routes = [
   {
     path:'Restaurant',
     component:RestaurantComponent
+  },
+  {
+    path:'products/:id',
+    component:RestaurantProdComponent
+  }
+  ,
+  {
+    path:'cart',
+    component:CartComponent
   }
 ];
 

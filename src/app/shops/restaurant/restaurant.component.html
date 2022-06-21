@@ -9,10 +9,10 @@
     </div>
     <div class="restaurant_list"  fxLayoutGap="16px grid" >
       <div class="flex"  *ngFor='let restaurant of restaurants'>
-    <mat-card class="shoplist-card">
+    <mat-card class="shoplist-card" [routerLink]="['/products', '2']">
          
 
-        <img mat-card-image src="https://cdn2.hubspot.net/hubfs/439788/Blog/Featured%20Images/Best%20Hotel%20Website%20Designs.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image src="{{restaurant.img}}" alt="Photo of a Shiba Inu">
           <div class="group">
               <mat-card-title>{{restaurant.RestaurantName}}</mat-card-title>
           <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
