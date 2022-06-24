@@ -39,6 +39,9 @@ import { environment } from '../environments/environment';
 import { RestaurantProdComponent } from './products/restaurant-prod/restaurant-prod.component';
 import { CartComponent } from './cart/cart.component';
 import { ToastrModule } from 'ngx-toastr';
+import { BillingComponent } from './billing/billing.component';
+import { AuthModule } from '@auth0/auth0-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +53,8 @@ import { ToastrModule } from 'ngx-toastr';
     RestaurantComponent,
     MobileComponent,
     RestaurantProdComponent,
-    CartComponent
+    CartComponent,
+    BillingComponent
     
   ],
   
@@ -94,7 +98,7 @@ import { ToastrModule } from 'ngx-toastr';
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [],
+  providers: [AuthModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

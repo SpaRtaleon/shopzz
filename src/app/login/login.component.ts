@@ -1,6 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { UntypedFormGroup, FormControl, NgForm, UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../auth/authentication.service';
 @Component({
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     private formBuilder : UntypedFormBuilder,
     private route :ActivatedRoute,
     private router : Router,
-    private authenticationService : AuthenticationService) {
+    private authenticationService : AuthenticationService,private toast:ToastrService) {
       // redirect to home if already logged in
       // if(this.authenticationService.currentUserValue){
       //   this.router.navigate(['/home']);
@@ -53,8 +54,23 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.f.username.value,this.f.password.value)
     .pipe(first())
     .subscribe(
-      data =>{ this.router.navigateByUrl('/home');
+    
+      data =>{ 
+        console.log(data)
+        if(data){
+        console.log(data);
+        this.toast.success("Login Success!!");
+        localStorage.setItem('userToken',data.accessToken);
+        // this.router.navigateByUrl('/home');
+
         //  this.router.navigate([ this.returnUrl]);
+      }
+      if(data['status']==404){
+        this.toast.error("No User Found!!");
+      }
+      if(data['status']==401){
+        this.toast.error("Wrong Password!!")
+      }
      
       },
       error =>{

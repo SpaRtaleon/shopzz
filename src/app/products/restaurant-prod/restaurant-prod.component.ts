@@ -5,6 +5,7 @@ import { ProductService } from '../../services/product.service';
 import { Item } from '../item.entity';
 import { CartComponent } from 'src/app/cart/cart.component';
 import { Toast, ToastrService } from 'ngx-toastr';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-prod',
@@ -13,12 +14,19 @@ import { Toast, ToastrService } from 'ngx-toastr';
 })
 export class RestaurantProdComponent implements OnInit {
 
-  constructor(private productService: ProductService,private toast:ToastrService) { }
+  constructor(private productService: ProductService,private toast:ToastrService,private route: ActivatedRoute) { }
   
-  products!: Product[];
+  products:any;
 
   ngOnInit() {
-    this.products = this.productService.findAll();
+   
+    console.log(this.route.snapshot.url[1].path);
+    let SHopId=this.route.snapshot.url[1].path;
+    this.productService.findAll(SHopId)
+    .subscribe((data:any)=>{
+      console.log(data);
+      this.products=data.products;
+    })
   }
   page = 1;
   pageSize=20;
@@ -52,7 +60,7 @@ export class RestaurantProdComponent implements OnInit {
       
       }
     }
-    alert('sss')
+  
     this.toast.success('Cart Added Successfuy!');
 
   } 

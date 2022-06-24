@@ -29,14 +29,14 @@ export class AuthenticationService {
      return this.currentUserSubject.value;
    }
 
-   login(username:string,password:any|JSON){
+   login(mobileNo:string,password:any|JSON){
      
-     return this.http.post<any>(`${environment.api}/api/auth/signin`,{username,password})
+     return this.http.post<any>(`${environment.api}/auth/auth/signin`,{mobileNo,password})
     
    };
 
    register(firstName:string,lastName:string,mobileNo:string,password:any,email:string,roles:any):Observable<any>{
-    return this.http.post<any>(`${environment.api}/api/auth/signup`, { firstName,lastName,mobileNo, password, email, roles,httpOptions })
+    return this.http.post<any>(`${environment.api}/auth/auth/signup`, { firstName,lastName,mobileNo, password, email, roles,httpOptions })
        .pipe(map(user =>{
           // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
          user.authdata = window.btoa(mobileNo +':' + password);

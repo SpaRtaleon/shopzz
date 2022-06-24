@@ -3,3 +3,10 @@
     /* grid-template-columns: 1fr; */
     grid-column-gap: 10px;
   }
+  .radio{
+    padding: 5px;
+    margin: 10px;
+  }
+  table{
+   padding: 10px;
+  }

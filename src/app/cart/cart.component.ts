@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from '../products/item.entity';
 import { ProductService } from '../services/product.service';
 import { Product } from '../products/product.entity';
@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
 	total: number = 0;
   @Output() productAdded = new EventEmitter();
   constructor( private activatedRoute: ActivatedRoute,
-		private productService: ProductService) { }
+		private productService: ProductService,private route:Router) { }
     get id() {
       return localStorage.getItem('cart');
   }
@@ -49,6 +49,11 @@ export class CartComponent implements OnInit {
 		}
 		localStorage.setItem("cart", JSON.stringify(cart));
 		this.loadCart();
+	}
+	checkout(){
+		console.log(this.items)
+		this.productService.getItems(this.items);
+		this.route.navigate(['/billing'])
 	}
   }
 

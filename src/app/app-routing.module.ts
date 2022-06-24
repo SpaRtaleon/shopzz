@@ -9,6 +9,7 @@ import { RestaurantComponent } from "./shops/restaurant/restaurant.component";
 import { NavComponent } from './nav/nav.component';
 import { RestaurantProdComponent } from './products/restaurant-prod/restaurant-prod.component';
 import { CartComponent } from './cart/cart.component';
+import { BillingComponent } from './billing/billing.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path:'cart',
     component:CartComponent
+  } ,
+  {
+    path:'billing',
+    component:BillingComponent
   }
 ];
 
