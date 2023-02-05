@@ -6,5 +6,12 @@ import { Component } from "@angular/core";
     styleUrls:['./top-bar.component.css']
 })
 export class topBarTool {
-    
+    headers=[
+        {
+          'firstname':'Mobile'
+        },
+      {
+          'firstname':'Fashion'
+        }];
+
 }

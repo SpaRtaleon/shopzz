@@ -1,9 +1,6 @@
 
-import { Route } from '@angular/compiler/src/core';
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl, NgForm } from '@angular/forms';
-import { RouterEvent, ROUTES } from '@angular/router';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -13,17 +10,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent  {
+    
   // loginval(formValue : NgForm){
   //   console.log(formValue);
   // }
   
-  constructor() {
 
-  }
-  ngOnInit(): void {
-  
-  }
   
     }
 

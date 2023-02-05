@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Restaurants</h1>
+    <div > 
+      <mat-form-field appearance="legacy" class="search">
+        <input matInput placeholder="Search shop">
+        <mat-icon matPrefix>search</mat-icon>
+        
+      </mat-form-field>
+    </div>
+    <div class="restaurant_list"  fxLayoutGap="16px grid" >
+      <div class="flex"  *ngFor='let restaurant of restaurants'>
+    <mat-card class="shoplist-card" [routerLink]="['/products', '2']">
+         
+
+        <img mat-card-image src="{{restaurant.img}}" alt="Photo of a Shiba Inu">
+          <div class="group">
+              <mat-card-title>{{restaurant.RestaurantName}}</mat-card-title>
+          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+          <mat-card-content>
+          <p>
+            {{restaurant.Address}}
+          </p>
+        </mat-card-content>
+          </div>
+       
+      </mat-card>
+    </div>
+    </div>
+
+     
+</div>

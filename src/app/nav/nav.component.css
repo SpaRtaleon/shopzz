@@ -1,0 +1,40 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+ width: 10%;
+ color: #ffffff;
+ background: #adb5bd;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.primary{
+  
+ color: #ffffff;
+ padding: 0.7em 1.7em;
+ font-size: 18px;
+ border-radius: 0.2em;
+ background: #adb5bd;
+ border: 1px solid #a7abaf;
+ transition: all .3s;
+ box-shadow: 6px 6px 12px #e9ecef;
+            
+  
+  top: 0;
+  z-index: 1;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+@media only screen and (max-width: 700px) {
+  .sidenav {
+    width: 40%;
+    color: #ffffff;
+    background: #adb5bd;
+   }
+
+}

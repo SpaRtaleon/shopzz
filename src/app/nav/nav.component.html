@@ -1,0 +1,79 @@
+<!-- <mat-drawer #drawer class="nav-sidenav" mode="side">
+  <h2>Menu</h2>
+  <h3>
+      <div >
+        <button mat-flat-button>
+         mobiles
+        </button>       
+    </div>
+  </h3>
+</mat-drawer>
+<mat-drawer-container class="nav-container" autosize>
+<mat-toolbar>
+<button   mat-icon-button (click)="drawer.toggle()" class="menu-icon">
+<mat-icon>menu</mat-icon>
+</button>
+<span>Shopzz</span>
+<span class="spacer"></span>
+<button mat-icon-button class="mat-icon-favorite" aria-label="icon-button with heart icon">
+<mat-icon >favorite</mat-icon>
+</button>
+<button mat-icon-button class="cart-icon">
+<mat-icon >shopping_cart</mat-icon>
+</button>
+<button  >
+
+<a routerLink='/login'>
+<mat-icon class="material-icons-outlined">
+account_circle
+</mat-icon>
+</a>
+</button>
+</mat-toolbar>
+<mat-tab-group>
+<mat-tab label="Restaurant" routerLink='/Restaurant'> </mat-tab>
+<mat-tab label="Grocery" routerLink='/login'> </mat-tab>
+<mat-tab label="Fashion"> Content 3 </mat-tab>
+</mat-tab-group>
+</mat-drawer-container> -->
+
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport 
+     
+      mode='side'>
+     
+      
+    <mat-toolbar>Menu
+      
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/Restaurant">Restaurant</a>
+      <a mat-list-item routerLink="#">Fashion</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      
+      </button>
+      <span>shopzz</span>
+      <span class="spacer"></span>
+     <button routerLink="/login" mat-icon-button class="cart-icon-outlined"><mat-icon>account_circle</mat-icon></button>
+      
+      <button routerLink="/cart" mat-icon-button class="cart-icon-outlined">
+        <mat-icon >shopping_cart</mat-icon>
+      </button>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    
+ <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

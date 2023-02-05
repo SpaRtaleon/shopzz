@@ -1,0 +1,29 @@
+/* .mat-card-content{
+    
+}
+.register-wrapper{
+    align-content: center;
+    justify-content:center ;
+    padding: 30px;
+
+} */
+.mat-card-content{
+    display: flex;
+    flex-direction: column;
+}
+.mat-card-header{
+    justify-content: center;
+}
+.container{
+    padding: 10vh;
+}
+.mat-card {
+    background-image: url('../../assets/img/Mobile-login.jpg');
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+    text-align: center;} 
+.form-fields{
+    
+    padding: 20px;
+}

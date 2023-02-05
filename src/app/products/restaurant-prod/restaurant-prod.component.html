@@ -1,0 +1,54 @@
+
+  
+  <div class="todaySpecial">
+    <h2 style="padding:1em ;">What's Today's Special..?</h2>
+    <div class="specialItems">
+      <mat-card class="items" style="background-image:url('../../../assets/img/images.jpg');background-size:cover;">
+
+      </mat-card>
+      <mat-card class="items" style="background-image:url('../../../assets/img/353168c3-99f1.jpg');background-size:cover;">
+    
+      </mat-card>
+      <mat-card class="items" style="background-image:url('../../../assets/img/pizza.webp');background-size:cover;">
+    
+      </mat-card>
+      <mat-card class="items" style="background-image:url('../../../assets/img/The-Most-Popular-Menu-Items-That-You-should-Consider-Adding-to-Your-Restaurant_Content-image2-min-1024x569.webp');background-size:cover;">
+    
+      </mat-card>
+      <mat-card class="items"style="background-image:url('../../../assets/img/The-Most-Popular.webp'); background-size:cover;" >
+    
+      </mat-card>
+    </div>
+  
+</div>
+<div class="containesr">
+  <div class="pagination d-flex justify-content-between"> 
+    <mat-form-field appearance="legacy" class="search">
+      <input matInput placeholder="Search item">
+      <mat-icon matPrefix>search</mat-icon>
+      
+    </mat-form-field>
+    <ngb-pagination  [collectionSize]="products.length " [(page)]="page" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+  </div>
+  
+  <div class="productist">
+    
+    <mat-card class="productlist-card" *ngFor="let item of products | slice: (page-1) * pageSize : page * pageSize">
+           
+  
+      <img mat-card-image src="https://cdn2.hubspot.net/hubfs/439788/Blog/Featured%20Images/Best%20Hotel%20Website%20Designs.jpg" alt="Photo of a Shiba Inu">
+        <div class="group">
+            <mat-card-title>{{item}}</mat-card-title>
+        <mat-card-subtitle>{{item}}</mat-card-subtitle>
+        <mat-card-content>
+        <!-- <p>
+         {{item?.note}}
+        </p> -->
+      </mat-card-content>
+        </div>
+        <button type="button" class="btn btn-success btn-sm" (click)="addToCart(item)">Add to Cart</button>
+    </mat-card>
+  </div>
+  <ngb-pagination class="d-flex justify-content-end" [collectionSize]="products.length " [(page)]="page" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+</div>
+
